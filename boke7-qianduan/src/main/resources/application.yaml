@@ -1,0 +1,48 @@
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/boke?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    hikari:
+      max-lifetime: 50000
+  redis:
+    host: 192.168.20.130
+    port: 6379
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 200MB
+  mail:
+    protocol: smtps
+    host: smtp.163.com
+    port: 465
+    username: lin1149566912@163.com
+    password: MEBKVZRCWOMAOWOU
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          socketFactoryClass: javax.net.ssl.SSLSocketFactory
+#        debug: true
+    from: lin1149566912@163.com
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+server:
+  port: 8085
+qiniu:    #七牛云的配置
+  accessKey: joyXEpNz1B8Oc3ur_xyJZ9OCmYNlJbMYv3U8bSB0
+  secretKey: bUZZ26nUoJOx3TceL-WscQpqbRbCw2Bd1OC1jvlo
+  bucket: bokeshengzhanmo   #空间名称
+minio:
+  url: http://192.168.20.130:9000 # 服务地址
+  access: admin # 账号
+  secret: adminminio # 密码
+  bucket: images # Bucket
+#日志输出到那个文件夹
+logging:
+  file:
+    path: G:\\java\\xm\\wc\\boke7\\log\\qianduan-log

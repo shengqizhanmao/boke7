@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lin.boke7admin.mapper.UserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lin.boke7admin.pojo.User">
+        <id column="id" property="id" />
+        <result column="login_name" property="loginName" />
+        <result column="real_name" property="realName" />
+        <result column="nick_name" property="nickName" />
+        <result column="pass_word" property="passWord" />
+        <result column="salt" property="salt" />
+        <result column="sex" property="sex" />
+        <result column="address" property="address" />
+        <result column="mobil" property="mobil" />
+        <result column="email" property="email" />
+        <result column="duties" property="duties" />
+        <result column="sort_no" property="sortNo" />
+        <result column="enable_flag" property="enableFlag" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, login_name,real_name,nick_name,pass_word,salt,sex,address,mobil, email, duties, sort_no, enable_flag
+    </sql>
+
+
+</mapper>
