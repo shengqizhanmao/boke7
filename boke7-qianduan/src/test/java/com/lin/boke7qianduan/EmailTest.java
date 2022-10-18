@@ -4,14 +4,13 @@ import com.lin.boke7qianduan.utils.SendEmailUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-
 import javax.annotation.Resource;
 import java.io.File;
 
 /**
  * @author lin
  */
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class EmailTest {
     @Resource
     private SendEmailUtil emailUtil;

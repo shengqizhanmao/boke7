@@ -21,8 +21,10 @@ public class WebMVCConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
+//                .allowedOrigins("*")
                 .allowedOrigins("http://localhost:8080", "http://localhost:3006", "http://localhost:3007")
                 .allowedOriginPatterns("http://localhost:8080", "http://localhost:3006", "http://localhost:3007")
+//                .allowedOriginPatterns("*")
                 .allowedMethods("GET", "HEAD", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowCredentials(true)
                 .maxAge(3600)
@@ -60,7 +62,8 @@ public class WebMVCConfig implements WebMvcConfigurer {
                 .addPathPatterns("/user/setUserPassword")
                 .addPathPatterns("/category/addCategory")
                 .addPathPatterns("/comment/create")
-                .addPathPatterns("/upload");
+                .addPathPatterns("/upload")
+                .addPathPatterns("/websocket");
 //                .excludePathPatterns("/articles/**") //获取文章
 //                .excludePathPatterns("/login");         //登录
 //                .excludePathPatterns("/register")       //注册

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lin.boke7qianduan.mapper.FriendsUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lin.boke7qianduan.pojo.FriendsUser">
+        <id column="id" property="id" />
+        <result column="form_user_id" property="formUserId" />
+        <result column="to_user_id" property="toUserId" />
+        <result column="status" property="status" />
+    </resultMap>
+    <!-- 连表查询 -->
+    <resultMap id="BaseResultMap2" type="com.lin.boke7qianduan.controller.para.FriendsUserVo">
+        <id column="id" property="id" />
+        <result column="form_user_id" property="formUserId" />
+        <result column="to_user_id" property="toUserId" />
+        <result column="status" property="status" />
+        <result column="username" property="toUserName" />
+        <result column="nickname" property="toNickName" />
+        <result column="avatar" property="toAvatar" />
+    </resultMap>
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, form_user_id, to_user_id, status
+    </sql>
+    <select id="getListFriendsVoByFormUserId" resultMap="BaseResultMap2">
+       select a.id,a.form_user_id,a.to_user_id,a.status,b.username,b.nickname,b.avatar
+       from m_friends_user a
+       left join m_user b
+       on a.to_user_id=b.id
+       where a.form_user_id=#{formUserId}
+    </select>
+</mapper>

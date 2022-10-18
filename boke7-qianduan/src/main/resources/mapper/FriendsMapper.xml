@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lin.boke7qianduan.mapper.FriendsMapper">
+
+    <resultMap id="BaseResultMap" type="com.lin.boke7qianduan.pojo.Friends">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="formUserId" column="form_user_id" jdbcType="BIGINT"/>
+        <result property="toUserId" column="to_user_id" jdbcType="BIGINT"/>
+        <result property="msg" column="msg" jdbcType="VARCHAR"/>
+        <result property="created" column="created" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,form_user_id,to_user_id,msg,created
+    </sql>
+    <select id="getListFriendsByFormUserId" resultType="com.lin.boke7qianduan.pojo.Friends">
+       select distinct to_user_id,form_user_id
+       from m_friends
+       where form_user_id=#{form_user_id}
+    </select>
+</mapper>

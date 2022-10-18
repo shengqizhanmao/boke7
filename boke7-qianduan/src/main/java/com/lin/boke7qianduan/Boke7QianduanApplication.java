@@ -2,7 +2,6 @@ package com.lin.boke7qianduan;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @SpringBootApplication
 public class Boke7QianduanApplication {
